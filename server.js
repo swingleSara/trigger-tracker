@@ -7,7 +7,7 @@ require("dotenv").config();
 
 let db;
 let dbConnectionStr = process.env.DB_STRING;
-let dbName = "cluster0";
+let dbName = "drinks";
 
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
   (client) => {
