@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trigger Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+        <h1>Current Drinks</h1>
+        <ul class="drinks">
+          <% for (let i = 0; i < info.length; i++) {%>
+          <li class="drink">
+            <span><%= info[i].name %></span>
+            <span><%= info[i].type %></span>
+            <span><%= info[i].subtype %></span>
+            <span><%= info[i].content %></span>
+            <span><%= info[i].measurement %></span>
+            <span><%= info[i].units %></span>
+            <i class = "fa fa-arrow-up"></i>
+            <i class = "fa fa-trash">
+          </li>
+          <% } %>
+        </ul>
+
+        <h2>Add a drink:</h2>
+
+        <form action="/addDrink" method="POST">
+          <input type="text" placeholder="Name" name="name" />
+          <input type="text" placeholder="Type" name="type" />
+          <input type="text" placeholder="Subtype" name="subtype" />
+          <input type="text" placeholder="Content" name="content" />
+          <input type="text" placeholder="Measurement" name="measurement" />
+          <input type="submit" />
+        </form>
+
+        <script src="js/main.js"></script>
+      </body>
+    </html>
+  </body>
+</html>
