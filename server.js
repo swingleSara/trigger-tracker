@@ -1,13 +1,12 @@
 const express = require("express");
 const app = express();
-const PORT = 8000;
-const cors = require("cors");
 const MongoClient = require("mongodb").MongoClient;
+const PORT = 2121;
 require("dotenv").config();
 
 let db,
   dbConnectionStr = process.env.DB_STRING,
-  dbName = "drinksDB";
+  dbName = "drinks";
 
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
   (client) => {
@@ -16,7 +15,6 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
   }
 );
 
-app.use(cors());
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
