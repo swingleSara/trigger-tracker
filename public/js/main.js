@@ -15,6 +15,7 @@ async function deleteDrink() {
   const subtype = this.parentNode.childNodes[5].innerText;
   const content = Number(this.parentNode.childNodes[7].innerText);
   const measurement = this.parentNode.childNodes[9].innerText;
+  const units = this.parentNode.childNodex[11].innerText;
   try {
     const response = await fetch("deleteDrink", {
       method: "delete",
@@ -25,6 +26,7 @@ async function deleteDrink() {
         subtypeS: subtype,
         contentS: content,
         measurementS: measurement,
+        unitsS: units,
       }),
     });
     const data = await response.json();
@@ -52,6 +54,7 @@ async function addUnit() {
         subtypeS: subtype,
         contentS: content,
         measurementS: measurement,
+        unitsS: units,
       }),
     });
     const data = await response.json();
