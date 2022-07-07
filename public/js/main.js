@@ -10,9 +10,9 @@ Array.from(arrowText).forEach((element) => {
 });
 
 async function deleteDrink() {
-  const type = this.parentNode.childNodes[1].innerText;
-  const subtype = this.parentNode.childNodes[3].innerText;
-  const name = this.parentNode.childNodes[5].innerText;
+  const name = this.parentNode.childNodes[1].innerText;
+  const type = this.parentNode.childNodes[3].innerText;
+  const subtype = this.parentNode.childNodes[5].innerText;
   const content = Number(this.parentNode.childNodes[7].innerText);
   const measurement = this.parentNode.childNodes[9].innerText;
   try {
@@ -20,9 +20,9 @@ async function deleteDrink() {
       method: "delete",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+        nameS: name,
         typeS: type,
         subtypeS: subtype,
-        nameS: name,
         contentS: content,
         measurementS: measurement,
       }),
@@ -36,9 +36,9 @@ async function deleteDrink() {
 }
 
 async function addUnit() {
-  const type = this.parentNode.childNodes[1].innerText;
-  const subtype = this.parentNode.childNodes[3].innerText;
-  const name = this.parentNode.childNodes[5].innerText;
+  const name = this.parentNode.childNodes[1].innerText;
+  const type = this.parentNode.childNodes[3].innerText;
+  const subtype = this.parentNode.childNodes[5].innerText;
   const content = Number(this.parentNode.childNodes[7].innerText);
   const measurement = this.parentNode.childNodes[9].innerText;
   const units = Number(this.parentNode.childNodes[11].innerText);
@@ -47,9 +47,9 @@ async function addUnit() {
       method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+        nameS: name,
         typeS: type,
         subtypeS: subtype,
-        nameS: name,
         contentS: content,
         measurementS: measurement,
       }),
