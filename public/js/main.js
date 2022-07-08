@@ -42,7 +42,7 @@ async function addUnit() {
   const subtype = this.parentNode.childNodes[5].innerText;
   const content = Number(this.parentNode.childNodes[7].innerText);
   const measurement = this.parentNode.childNodes[9].innerText;
-  const tUnits = Number(this.parentNode.childNodes[11].innerText);
+  const aUnits = Number(this.parentNode.childNodes[11].innerText);
   try {
     const response = await fetch("addOneUnit", {
       method: "put",
@@ -53,7 +53,7 @@ async function addUnit() {
         subtypeS: subtype,
         contentS: content,
         measurementS: measurement,
-        unitsS: tUnits,
+        unitsS: aUnits,
       }),
     });
     const data = await response.json();
