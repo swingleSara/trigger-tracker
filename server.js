@@ -61,7 +61,7 @@ app.put("/addOneUnit", (request, response) => {
       },
       {
         $set: {
-          likes: request.body.unitsS + 1,
+          units: request.body.unitsS + 1,
         },
       },
       {
