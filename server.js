@@ -52,9 +52,9 @@ app.put("/addOneUnit", (request, response) => {
   db.collection("drinks")
     .updateOne(
       {
-        name: request.body.nameS,
-        type: request.body.typeS,
-        subtype: request.body.subytypeS,
+        name: request.body.stageNameS,
+        type: request.body.birthNameS,
+        subtype: request.body.subtypeS,
         content: request.body.contentS,
         measurement: request.body.measurementS,
         units: request.body.unitsS,
@@ -72,16 +72,6 @@ app.put("/addOneUnit", (request, response) => {
     .then((result) => {
       console.log("Added one unit");
       response.json("Unit added");
-    })
-    .catch((error) => console.error(error));
-});
-
-app.delete("/deleteDrink", (request, response) => {
-  db.collection("drinks")
-    .deleteOne({ name: request.body.nameS })
-    .then((result) => {
-      console.log("Drink deleted");
-      response.json("Drink deleted");
     })
     .catch((error) => console.error(error));
 });
