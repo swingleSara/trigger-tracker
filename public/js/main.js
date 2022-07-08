@@ -6,7 +6,7 @@ Array.from(deleteText).forEach((element) => {
 });
 
 Array.from(arrowText).forEach((element) => {
-  element.addEventListener("click", addOneUnit);
+  element.addEventListener("click", addUnit);
 });
 
 async function deleteDrink() {
@@ -35,7 +35,7 @@ async function deleteDrink() {
   }
 }
 
-async function addOneUnit() {
+async function addUnit() {
   const name = this.parentNode.childNodes[1].innerText;
   const type = this.parentNode.childNodes[3].innerText;
   const subtype = this.parentNode.childNodes[5].innerText;
