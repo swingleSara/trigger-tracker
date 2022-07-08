@@ -54,14 +54,14 @@ app.put("/addOneUnit", (request, response) => {
       {
         name: request.body.nameS,
         type: request.body.typeS,
-        subtype: request.body.subtypeS,
+        subtype: request.body.subytypeS,
         content: request.body.contentS,
         measurement: request.body.measurementS,
         units: request.body.unitsS,
       },
       {
         $set: {
-          units: request.body.unitsS + 1,
+          likes: request.body.unitsS + 1,
         },
       },
       {
