@@ -5,27 +5,20 @@ Array.from(deleteText).forEach((element) => {
   element.addEventListener("click", deleteDrink);
 });
 
-Array.from(arrowText).forEach((element) => {
+Array.from(thumbText).forEach((element) => {
   element.addEventListener("click", addUnit);
 });
 
 async function deleteDrink() {
   const name = this.parentNode.childNodes[1].innerText;
   const type = this.parentNode.childNodes[3].innerText;
-  const subtype = this.parentNode.childNodes[5].innerText;
-  const content = Number(this.parentNode.childNodes[7].innerText);
-  const measurement = this.parentNode.childNodes[9].innerText;
-
   try {
-    const response = await fetch("deleteDrink", {
+    const response = await fetch("deleteRapper", {
       method: "delete",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         nameS: name,
         typeS: type,
-        subtypeS: subtype,
-        contentS: content,
-        measurementS: measurement,
       }),
     });
     const data = await response.json();
@@ -39,21 +32,15 @@ async function deleteDrink() {
 async function addUnit() {
   const name = this.parentNode.childNodes[1].innerText;
   const type = this.parentNode.childNodes[3].innerText;
-  const subtype = this.parentNode.childNodes[5].innerText;
-  const content = Number(this.parentNode.childNodes[7].innerText);
-  const measurement = this.parentNode.childNodes[9].innerText;
-  const aUnits = Number(this.parentNode.childNodes[11].innerText);
+  const tUnits = Number(this.parentNode.childNodes[5].innerText);
   try {
-    const response = await fetch("addOneUnit", {
+    const response = await fetch("addOneLike", {
       method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         nameS: name,
         typeS: type,
-        subtypeS: subtype,
-        contentS: content,
-        measurementS: measurement,
-        unitsS: aUnits,
+        unitsS: tUnits,
       }),
     });
     const data = await response.json();
