@@ -35,13 +35,10 @@ app.post("/addDrink", (request, response) => {
     .insertOne({
       name: request.body.name,
       type: request.body.type,
-      subtype: request.body.subtype,
-      content: request.body.content,
-      measurement: request.body.measurement,
       units: 0,
     })
     .then((result) => {
-      console.log("Drink added");
+      console.log("Drink Added");
       response.redirect("/");
     })
     .catch((error) => console.error(error));
@@ -53,9 +50,6 @@ app.put("/addOneUnit", (request, response) => {
       {
         name: request.body.nameS,
         type: request.body.typeS,
-        subtype: request.body.subtypeS,
-        content: request.body.contentS,
-        measurement: request.body.measurementS,
         units: request.body.unitsS,
       },
       {
@@ -69,18 +63,18 @@ app.put("/addOneUnit", (request, response) => {
       }
     )
     .then((result) => {
-      console.log("Added one unit");
-      response.json("Unit added");
+      console.log("Added One Unit");
+      response.json("Unit Added");
     })
     .catch((error) => console.error(error));
 });
 
 app.delete("/deleteDrink", (request, response) => {
-  db.collection("drinks")
+  db.collection("drinkss")
     .deleteOne({ name: request.body.nameS })
     .then((result) => {
-      console.log("Drink deleted");
-      response.json("Drink deleted");
+      console.log("Drink Deleted");
+      response.json("Drink Deleted");
     })
     .catch((error) => console.error(error));
 });
