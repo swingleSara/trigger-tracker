@@ -23,7 +23,6 @@ app.use(express.json());
 app.get("/", (request, response) => {
   db.collection("drinks")
     .find()
-    .sort({ units: -1 })
     .toArray()
     .then((data) => {
       response.render("index.ejs", { info: data });
