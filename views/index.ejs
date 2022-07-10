@@ -18,9 +18,6 @@
           <li class="drink">
             <span><%= info[i].name %></span>
             <span><%= info[i].type %></span>
-            <span><%= info[i].subtype %></span>
-            <span><%= info[i].content %></span>
-            <span><%= info[i].measurement %></span>
             <span><%= info[i].units %></span>
             <span class = "fa fa-arrow-up"></span>
             <span class = "fa fa-trash"></span>
@@ -33,9 +30,6 @@
         <form action="/addDrink" method="POST">
           <input type="text" placeholder="Name" name="name" />
           <input type="text" placeholder="Type" name="type" />
-          <input type="text" placeholder="Subtype" name="subtype" />
-          <input type="text" placeholder="Content" name="content" />
-          <input type="text" placeholder="Measurement" name="measurement" />
           <input type="submit" />
         </form>
 
