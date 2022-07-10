@@ -70,7 +70,7 @@ app.put("/addOneUnit", (request, response) => {
 });
 
 app.delete("/deleteDrink", (request, response) => {
-  db.collection("drinkss")
+  db.collection("drinks")
     .deleteOne({ name: request.body.nameS })
     .then((result) => {
       console.log("Drink Deleted");

@@ -5,7 +5,7 @@ Array.from(deleteText).forEach((element) => {
   element.addEventListener("click", deleteDrink);
 });
 
-Array.from(thumbText).forEach((element) => {
+Array.from(arrowText).forEach((element) => {
   element.addEventListener("click", addUnit);
 });
 
@@ -13,7 +13,7 @@ async function deleteDrink() {
   const name = this.parentNode.childNodes[1].innerText;
   const type = this.parentNode.childNodes[3].innerText;
   try {
-    const response = await fetch("deleteRapper", {
+    const response = await fetch("deleteDrink", {
       method: "delete",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -34,7 +34,7 @@ async function addUnit() {
   const type = this.parentNode.childNodes[3].innerText;
   const tUnits = Number(this.parentNode.childNodes[5].innerText);
   try {
-    const response = await fetch("addOneLike", {
+    const response = await fetch("addOneUnit", {
       method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
