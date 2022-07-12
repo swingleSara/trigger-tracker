@@ -12,6 +12,7 @@ Array.from(arrowText).forEach((element) => {
 async function deleteDrink() {
   const name = this.parentNode.childNodes[1].innerText;
   const type = this.parentNode.childNodes[3].innerText;
+  const size = this.parentNode.childNodes[3].innerText;
   try {
     const response = await fetch("deleteDrink", {
       method: "delete",
@@ -19,6 +20,7 @@ async function deleteDrink() {
       body: JSON.stringify({
         nameS: name,
         typeS: type,
+        sizeS: size,
       }),
     });
     const data = await response.json();
@@ -32,7 +34,8 @@ async function deleteDrink() {
 async function addUnit() {
   const name = this.parentNode.childNodes[1].innerText;
   const type = this.parentNode.childNodes[3].innerText;
-  const tUnits = Number(this.parentNode.childNodes[5].innerText);
+  const size = this.parentNode.childNodes[5].innerText;
+  const tUnits = Number(this.parentNode.childNodes[7].innerText);
   try {
     const response = await fetch("addOneUnit", {
       method: "put",
@@ -40,6 +43,7 @@ async function addUnit() {
       body: JSON.stringify({
         nameS: name,
         typeS: type,
+        sizeS: size,
         unitsS: tUnits,
       }),
     });

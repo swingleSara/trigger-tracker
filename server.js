@@ -35,6 +35,7 @@ app.post("/addDrink", (request, response) => {
     .insertOne({
       name: request.body.name,
       type: request.body.type,
+      size: request.body.size,
       units: 0,
     })
     .then((result) => {
@@ -50,6 +51,7 @@ app.put("/addOneUnit", (request, response) => {
       {
         name: request.body.nameS,
         type: request.body.typeS,
+        size: request.body.sizeS,
         units: request.body.unitsS,
       },
       {
