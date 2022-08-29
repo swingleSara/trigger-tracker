@@ -6,5 +6,6 @@
 <p>The current-most project is making a user friendly interface and connecting the two apps (this and the diary mentioned above) together.</p>
 </span>
 <span>
-<h2></h2>
+<h2>How To Install And Run</h2>
+<p>You will need to install npm and express dependencies.  The process to do so will be forthcoming shortly.</p>
 </span>
